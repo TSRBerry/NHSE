@@ -3,6 +3,9 @@
   <PropertyGroup>
     <TargetFrameworks>net46;net6.0-windows</TargetFrameworks>
     <NeutralLanguage>en</NeutralLanguage>
+    <TargetFrameworks>net7.0</TargetFrameworks>
+    <LangVersion>9</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
