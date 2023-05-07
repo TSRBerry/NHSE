@@ -92,6 +92,23 @@ namespace NHSE.Core
             return bit != 0;
         }
 
+        public int GetSatisfiedMilestones(uint count)
+        {
+            int satisfied = 0;
+            for (int i = 0; i < AchievementCount; i++)
+            {
+                if (GetIsSatisfied(i, count))
+                {
+                    satisfied++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return satisfied;
+        }
+
         private const string Unknown = "???";
 
         public static readonly IReadOnlyDictionary<int, LifeSupportAchievement> List = new Dictionary<int, LifeSupportAchievement>

@@ -155,6 +155,16 @@ namespace NHSE.WinForms
             imgfetcher.Show();
         }
 
+        private void Menu_SaveNookDBInfo_Click(object sender, EventArgs e)
+        {
+            using SaveFileDialog? sfd = new SaveFileDialog();
+            if (sfd.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+            SAV.SaveNookDBInfo(PlayerIndex, sfd.FileName);
+        }
+
         private void ReloadAll()
         {
             Villagers.Villagers = SAV.Main.GetVillagers();
@@ -521,5 +531,10 @@ namespace NHSE.WinForms
 
         private void NUD_PocketCount_ValueChanged(object sender, EventArgs e) => ((NumericUpDown) sender).BackColor = (uint) ((NumericUpDown) sender).Value > 20 ? Color.Red : NUD_BankBells.BackColor;
         private void NUD_Wallet_ValueChanged(object sender, EventArgs e) => NUD_Wallet.BackColor = (ulong) NUD_Wallet.Value > 99_999 ? Color.Red : NUD_BankBells.BackColor;
+
+        private void Tab_Villagers_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

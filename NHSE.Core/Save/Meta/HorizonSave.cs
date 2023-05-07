@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 
 namespace NHSE.Core
 {
@@ -97,6 +99,21 @@ namespace NHSE.Core
             var townName = Players[0].Personal.TownName;
             var timestamp = Main.LastSaved.TimeStamp.Replace(':', '.');
             return StringUtil.CleanFileName($"{townName} - {timestamp}");
+        }
+
+        public void SaveNookDBInfo(int playerIndex, string fileName)
+        {
+            File.WriteAllText(fileName,
+                JsonSerializer.Serialize(new Structures.NookDBInfo(
+                    playerIndex,
+                    new Structures.PlayerItemCatalog(Players[playerIndex]),
+                    Players[playerIndex].Personal.GetRecipeBook(),
+                    Main.Museum,
+                    Players[playerIndex].Personal.Achievements,
+                    Players[playerIndex].Personal.Reactions,
+                    Main.GetVillagers()
+                )
+            ));
         }
     }
 }
