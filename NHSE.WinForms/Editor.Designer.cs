@@ -39,6 +39,8 @@
             this.Menu_LoadDecrypted = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_RAMEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_ItemImages = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.Menu_SaveNookDBInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Options = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Language = new System.Windows.Forms.ToolStripComboBox();
             this.Menu_Settings = new System.Windows.Forms.ToolStripMenuItem();
@@ -157,7 +159,9 @@
             this.Menu_VerifyHashes,
             this.Menu_LoadDecrypted,
             this.Menu_RAMEdit,
-            this.Menu_ItemImages});
+            this.Menu_ItemImages,
+            this.toolStripSeparator1,
+            this.Menu_SaveNookDBInfo});
             this.Menu_Tools.Name = "Menu_Tools";
             this.Menu_Tools.Size = new System.Drawing.Size(46, 20);
             this.Menu_Tools.Text = "Tools";
@@ -201,6 +205,18 @@
             this.Menu_ItemImages.Size = new System.Drawing.Size(206, 22);
             this.Menu_ItemImages.Text = "Item Images";
             this.Menu_ItemImages.Click += new System.EventHandler(this.Menu_ItemImages_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(203, 6);
+            // 
+            // Menu_SaveNookDBInfo
+            // 
+            this.Menu_SaveNookDBInfo.Name = "Menu_SaveNookDBInfo";
+            this.Menu_SaveNookDBInfo.Size = new System.Drawing.Size(206, 22);
+            this.Menu_SaveNookDBInfo.Text = "Save NookDB info";
+            this.Menu_SaveNookDBInfo.Click += new System.EventHandler(this.Menu_SaveNookDBInfo_Click);
             // 
             // Menu_Options
             // 
@@ -485,6 +501,7 @@
             this.Tab_Villagers.TabIndex = 0;
             this.Tab_Villagers.Text = "Villagers";
             this.Tab_Villagers.UseVisualStyleBackColor = true;
+            this.Tab_Villagers.Click += new System.EventHandler(this.Tab_Villagers_Click);
             // 
             // Tab_Players
             // 
@@ -968,6 +985,8 @@
         private System.Windows.Forms.ToolStripMenuItem Menu_ItemImages;
         private System.Windows.Forms.Label L_Poki;
         private System.Windows.Forms.NumericUpDown NUD_Poki;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem Menu_SaveNookDBInfo;
     }
 }
 
